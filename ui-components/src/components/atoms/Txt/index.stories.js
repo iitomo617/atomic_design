@@ -11,4 +11,3 @@ export default stories => stories
   .add('警告テキスト - S', () => <WarningTxt size="s">警告テキストを表示</WarningTxt>)
   .add('警告テキスト - M', () => <WarningTxt>警告テキストを表示</WarningTxt>)
   .add('警告テキスト - L', () => <WarningTxt size="l">警告テキストを表示</WarningTxt>);
-

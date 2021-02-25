@@ -1,4 +1,4 @@
-import React, { isValidElement } from 'react';
+import React from 'react';
 import moment from 'moment';
 import 'moment/locale/ja';
 
@@ -14,34 +14,33 @@ export const TimeContainer = ({
   value = parseInt(value, 10);
 
   var children;
-  if (!isValid(value)){
+  if (!isValid(value)) {
     children = '有効な時間表現ではありません';
-  }else{
+  } else {
     children = formatDatetime(value, format);
   }
-
-  //datetime属性に値を入れている
-  if (!dateTime){
+  
+  if (!dateTime) {
     dateTime = formatDatetime(value);
   }
 
   return presenter({ children, dateTime, ...props });
-}
+};
 
 const Time = props => (
   <TimeContainer
-    presenter={ presenterProps => <TimePresenter { ...presenterProps} />} {...props}
+    presenter={ presenterProps => <TimePresenter { ...presenterProps } /> }
+    { ...props }
   />
 );
-
 export default Time;
 
 moment.locale();
 
-function isValid(unixtime){
+function isValid(unixtime) {
   return moment(unixtime, 'x', true).isValid();
 }
 
-function formatDatetime(datetime, format = 'YYYY-MM-DDTHH:mm'){
+function formatDatetime(datetime, format = 'YYYY-MM-DDTHH:mm') {
   return moment(datetime).format(format);
 }

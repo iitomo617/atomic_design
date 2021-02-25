@@ -1,4 +1,4 @@
-.root{
+.root {
   display: flex;
   padding: 1rem;
   position: relative;
@@ -6,7 +6,7 @@
 
 .body {
   flex: 1;
-  min-width: 0; /*Flexboxレイアウトでの横幅制御およびテキスト複数行対応用  */
+  min-width: 0;
 }
 
 .media {
@@ -25,6 +25,6 @@
   transform: translateY(-50%) !important;
 }
 
-.root:hover .del{
-  display: inline-block !important
+.root:hover .del {
+  display: inline-block !important;
 }

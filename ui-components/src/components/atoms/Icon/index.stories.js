@@ -7,4 +7,4 @@ export default stories => stories
   .add('ChevronRightIcon', () => <ChevronRightIcon />)
   .add('SearchIcon', () => <SearchIcon />)
   .add('SettingsIcon', () => <SettingsIcon />)
-  .add('クリッカブル', () => <TrashCanIcon onClick={ action('アイコンがクリックされました') }/>);
+  .add('クリッカブル', () => <TrashCanIcon onClick={ action('アイコンがクリックされました') } />);

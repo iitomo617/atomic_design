@@ -1,19 +1,17 @@
-.root{
+.root {
   display: inline-block;
   position: relative;
 }
 
-/* rootの子要素で最初の要素が*(任意のクラス)だったら隣接クラスタの*(任意のクラス)に当てる */
 .root > *:first-child + * {
   display: none;
   left: 50%;
   position: absolute;
   top: 0;
-  transform: translate(-50%, 100%) translateY(-54px);
-  white-space: nowrap;  
+  transform: translate(-50%, -100%) translateY(-12px);
+  white-space: nowrap;
 }
 
 .root > *:first-child:hover + * {
   display: inline-block;
 }
-
