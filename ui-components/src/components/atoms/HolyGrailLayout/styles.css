@@ -14,7 +14,7 @@
 }
 
 @media (min-width: 768px) {
-  .body{
+  .body {
     flex: 1;
     flex-direction: row;
   }
@@ -23,8 +23,8 @@
   .body > :last-child {
     flex: 0 0 12em;
   }
-  
-  .body > :first-child{
+
+  .body > :first-child {
     flex: 1;
   }
 }

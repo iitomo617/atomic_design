@@ -1,17 +1,11 @@
-/*
-訂正：紙面掲載のコードにて、
-import { containPresenter } from '../../utils/HoC.js';
-という記述がありますが、このタイミングではこの 1 行は必要ありません。
-記述するとエラーになりますので、この行は記述しないようにお願いします。
-*/
-
 import React from 'react';
 import styles from './styles.css';
+import { containPresenter } from '../../utils/HoC.js';
 
 const HolyGrailLayoutPresenter = ({ tag:Tag = 'div', parts, className, ...props }) => {
   const { top, bottom, main, left, right } = parts;
   return (
-    <Tag className={[ styles.root, className ].join(' ')} >
+    <Tag className={[ styles.root, className ].join(' ')}>
       { top }
       <div className={styles.body}>
         { main }
@@ -23,7 +17,7 @@ const HolyGrailLayoutPresenter = ({ tag:Tag = 'div', parts, className, ...props 
   );
 };
 
-const HolyGrailLayoutConatiner = ({presenter, children, ...props }) => {
+const HolyGrailLayoutContainer = ({ presenter, children, ...props }) => {
   const parts = mapParts(children);
   return presenter({ parts, ...props });
 };
@@ -43,16 +37,11 @@ function mapParts(elems) {
     if (!~idx) return;
     parts[idx] = elem.props.children;
   });
-  const [top, bottom, main, left, right ] = parts;
-  return {top, bottom, main ,left, right };
+  const [ top, bottom, main, left, right ] = parts;
+  return { top, bottom, main, left, right };
 }
 
-const HolyGrailLayout = props => (
-  <HolyGrailLayoutConatiner
-    presenter={ presenterProps => <HolyGrailLayoutPresenter {...presenterProps}/>}
-    { ...props }
-  />
-);
+const HolyGrailLayout = containPresenter(HolyGrailLayoutContainer, HolyGrailLayoutPresenter);
 export default HolyGrailLayout;
 
 export const HolyGrailTop = () => <div>これはレンダリングされないもの</div>;

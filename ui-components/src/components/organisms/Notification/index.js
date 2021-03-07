@@ -4,15 +4,13 @@ import Img from '../../atoms/Img/index.js';
 import Heading from '../../atoms/Heading/index.js';
 import { InfoTxt } from '../../atoms/Txt/index.js';
 import Time from '../../atoms/Time/index.js';
-import DeleteButton from '../../molecules/DeleteButton/index.js';
 import MediaObjectLayout from '../../atoms/MediaObjectLayout/index.js';
+import DeleteButton from '../../molecules/DeleteButton/index.js';
 import { containPresenter } from '../../utils/HoC.js';
-
 
 export class NotificationContainer extends Component {
   constructor() {
     super();
-    // ::this.onClickDelete = onClickDelete.bind(this)
     this.onClickDelete = ::this.onClickDelete;
   }
 
@@ -35,7 +33,7 @@ export const NotificationPresenter = ({
   onClickDelete,
   ...props,
 }) => (
-  <MediaObjectLayout tag='section' className={ [ styles.root, className ].join(' ') } { ...props }>
+  <MediaObjectLayout tag="section" className={ [ styles.root, className ].join(' ') } { ...props }>
     <Img src={ program.thumbnail } className={ styles.media } width="128" height="72" />
     <Heading level={ 3 } visualLevel={ 6 }>{ program.title }</Heading>
     <InfoTxt size="s">{ program.channelName }</InfoTxt>
@@ -47,6 +45,6 @@ export const NotificationPresenter = ({
   </MediaObjectLayout>
 );
 
-const Notification = containPresenter(NotificationContainer,NotificationPresenter);
+const Notification = containPresenter(NotificationContainer, NotificationPresenter);
 
 export default Notification;

@@ -8,9 +8,10 @@ import HolyGrailLayout, {
 } from './index.js';
 
 export default function (stories) {
-  return stories
+  return stories 
   .add(
-    'デフォルト', () => (
+    'デフォルト',
+    () => (
       <HolyGrailLayout>
         <HolyGrailTop>
           <header style={{ minHeight: '50px', backgroundColor: '#ccc' }}>header</header>

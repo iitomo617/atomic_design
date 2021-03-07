@@ -9,7 +9,7 @@ export default stories => stories
       <Tip><span>チップだよ</span></Tip>
     </HoverTipInteraction>
   ))
-  .add('マーカー', () => withStyle({ display: 'inline-block', margin: '50px'})(
+  .add('マーカー', () => withStyle({ display: 'inline-block', margin: '50px' })(
     <HoverTipInteraction>
       <Marker><span>ホバーしてね</span></Marker>
       <Tip><span>チップだよ</span></Tip>

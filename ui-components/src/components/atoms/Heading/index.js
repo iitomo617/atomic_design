@@ -34,7 +34,6 @@ export const HeadingContainer = ({
 };
 
 const Heading = containPresenter(HeadingContainer, HeadingPresenter);
-
 export default Heading;
 
-export const HeadingUnderlined = containPresenter(HeadingContainer,HeadingUnderlinedPresenter);
+export const HeadingUnderlined = containPresenter(HeadingContainer, HeadingUnderlinedPresenter);

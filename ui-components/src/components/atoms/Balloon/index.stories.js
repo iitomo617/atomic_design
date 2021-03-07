@@ -1,11 +1,3 @@
-/*
-訂正：紙面掲載のコードにて、
-import HoverTipInteraction, { Tip } from '../HoverTipInteraction/index.js';
-という記述がありますが、この 1 行は必要ありません。
-代わりに BalloonTip コンポーネントのインポートが必要です。
-お手数ですが置き替えて進めてください。
-*/
-
 import React from 'react';
 import Balloon, { BalloonTip } from './index.js';
 import { TrashCanIcon } from '../Icon/index.js';
@@ -17,6 +9,6 @@ export default stories => stories
   .add('絶対座標配置', () => <Balloon style={{ position: 'absolute', top: '200px', left: '200px' }}>左上から 200px に配置</Balloon>)
   .add('アイコンラベル', () => <Balloon><TrashCanIcon /></Balloon>)
   .add('絵文字', () => <Balloon>❌</Balloon>)
-  .add('バルーンチップ', () => withStyle({ marginTop: '50px'})(
-    <p>ここに<BalloonTip label='注釈を記述するUI'>バルーンチップ</BalloonTip></p>
+  .add('バルーンチップ', () => withStyle({ marginTop: '50px' })(
+    <p>ここに<BalloonTip label="注釈を記述するUI">バルーンチップ</BalloonTip>を表示</p>
   ));
