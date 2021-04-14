@@ -9,6 +9,6 @@ function buttonFactory(type) {
 
 export const Button = buttonFactory('default');
 export const PrimaryButton = buttonFactory('primary');
-export const WaringButton = buttonFactory('warning');
+export const WarningButton = buttonFactory('warning');
 
 export default Button;
