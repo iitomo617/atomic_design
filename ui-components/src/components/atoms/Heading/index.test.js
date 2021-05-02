@@ -21,17 +21,17 @@ describe('HeadingContainer', () => {
     expect(visualLevel).toBe(2);
   });
 
-  it('1 未満のレベルは 1 とする', ()=> {
+  it('1 未満のレベルは 1 とする', () => {
     const { tag, visualLevel } = HeadingContainer({
       presenter,
       level: 0,
-      visuallevel: 0,
+      visualLevel: 0,
     });
     expect(tag).toBe('h1');
     expect(visualLevel).toBe(1);
   });
 
-  it('7 以上のレベルは 6 とする', ()=> {
+  it('7 以上のレベルは 6 とする', () => {
     const { tag, visualLevel } = HeadingContainer({
       presenter,
       level: 7,
